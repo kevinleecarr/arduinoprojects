@@ -1,0 +1,28 @@
+/* For using TM1637 LCD, 4 digit, 7 segment for arduino nano (used on spindle control module encoder feedback)
+
+LCD: https://www.amazon.com/gp/product/B072N2LDBW/ref=oh_aui_detailpage_o00_s01?ie=UTF8&psc=1
+Encoder: https://www.amazon.com/gp/product/B00UTIFCVA/ref=oh_aui_search_detailpage?ie=UTF8&psc=1
+
+
+reference library:
+https://github.com/bremme/arduino-tm1637
+
+The display modules has two signal connection (and two power connections) which are CLK and DIO. These pins can be connected to any pair of digital pins on the Arduino. When an object is created, the pins should be configured.
+
+Nano pinout with encoder:
+
+Arduino				Encoder-Cable
+GND (next to D2)	Black
++5V					Red
+D2					Green
+D3					White
+
+Arduino				LCD Unit
+D4					CLK
+D5					DIO
++5V					+5V
+GND					GND
+
+*/
+
+
