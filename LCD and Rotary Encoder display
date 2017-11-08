@@ -18,8 +18,8 @@ D2					Green
 D3					White
 
 Arduino				LCD Unit
-D4					CLK
-D5					DIO
+D4					DIO
+D5					CLK
 +5V					+5V
 GND					GND
 
