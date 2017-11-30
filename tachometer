@@ -48,7 +48,6 @@ void loop()
     }
     prevMicros = micros(); // store time for nect revolution calculation
     newRev = 1;
-    delayMicroseconds(200);
   }
   if (currentState == LOW && prevState == LOW) {
     newRev = 0;
@@ -59,9 +58,15 @@ void loop()
   if( ( millis()-refresh ) >= 100 ) {
        if (micros() - prevMicros > 1000000L) {
          rpm = 0;
+         prevMicros = micros();
        }
        Serial.println(rpm);
 
+       if (rpm > 9999) {
+         rpm = 9999; 
+       } else if (rpm < 0) {
+         rpm = 0;
+       }
        sprintf(sRPM, "%04d", (int)rpm);
        display.print(sRPM);
 
